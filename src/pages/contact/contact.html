@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons end>
+          <button ion-button clear (click)="editContact()">
+            Edit
+          </button>
+        </ion-buttons>
+    <ion-title>{{contact.firstName}} {{contact.lastName}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+      <img *ngIf="contact.gender == 'F'" src="../../assets/imgs/girl.png">
+      <img *ngIf="contact.gender == 'M'" src="../../assets/imgs/boy.png">
+      <ion-card-content text-center>
+        <ion-card-title>
+          {{contact.firstName}} {{contact.lastName}}
+        </ion-card-title>
+        <p>{{contact.phoneNumber}}</p>
+        <p>{{contact.email}}</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button ion-button full color="primary" (click)="onAddFavorite()">Add to Favorites</button>
+        </ion-col>
+        <ion-col>
+          <button ion-button full color="danger" (click)="onDelete()">Delete Contact</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

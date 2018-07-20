@@ -1,0 +1,8 @@
+{
+  "name": "contact_book",
+  "app_id": "53170e89",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

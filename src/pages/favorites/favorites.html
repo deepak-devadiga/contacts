@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Favorites</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let favorite of favorites; let i = index">
+      <ion-thumbnail item-start>
+        <img src="../../assets/imgs/star.png" alt="favStar" />
+      </ion-thumbnail>
+      <h2>{{favorite.firstName}} {{favorite.lastName}}</h2>
+      <p><ion-icon name="call"></ion-icon> {{favorite.phoneNumber}}</p>
+      <p><ion-icon name="mail"></ion-icon> {{favorite.email}}</p>
+      <button ion-button clear item-end icon-only (click)="onRemoveFavorite(favorite, i)">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

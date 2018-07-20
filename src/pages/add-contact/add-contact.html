@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Contact</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input type="text" name="firstName" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input type="text" name="lastName" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Gender</ion-label>
+          <ion-select ngModel name="gender" required>
+            <ion-option value="M">Male</ion-option>
+            <ion-option value="F">Female</ion-option>
+          </ion-select>
+        </ion-item>
+      <ion-item>
+        <ion-label floating>Phone Number</ion-label>
+        <ion-input type="number" name="phoneNumber" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Email Id</ion-label>
+        <ion-input type="email" name="email" ngModel></ion-input>
+      </ion-item>
+    </ion-list>    
+    <button ion-button block type="submit" [disabled]="!f.valid">Add</button> 
+  </form>
+</ion-content>

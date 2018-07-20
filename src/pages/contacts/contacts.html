@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onAddContact()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>Contacts</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!--<ion-card *ngFor="let contact of contacts">
+    <ion-card-content>
+      <button ion-item>
+        <h2>
+            <ion-icon name="call"></ion-icon> {{contact.firstName}} {{contact.lastName}}
+        </h2>
+      <p>
+        <ion-icon name="call"></ion-icon> {{contact.phoneNumber}}
+      </p>
+      <p>
+        <ion-icon name="mail"></ion-icon> {{contact.email}}
+      </p>
+    </button>
+    </ion-card-content>
+  </ion-card>-->
+
+  <ion-list>
+      <ion-item *ngFor="let contact of contacts; let i = index">
+        <ion-thumbnail item-start>
+          <img *ngIf="contact.gender == 'F'" src="../../assets/imgs/girl.png">
+          <img *ngIf="contact.gender == 'M'" src="../../assets/imgs/boy.png">
+        </ion-thumbnail>
+        <h2>{{contact.firstName}} {{contact.lastName}}</h2>
+        <p><ion-icon name="call"></ion-icon> {{contact.phoneNumber}}</p>
+        <p><ion-icon name="mail"></ion-icon> {{contact.email}}</p>
+        <button ion-button clear item-end (click)="onViewContact(contact, i)">View</button>
+      </ion-item>
+    </ion-list>
+
+
+</ion-content>
